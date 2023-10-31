@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>flow matcher</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Didact+Gothic" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+</head>
+
+<body font-family: 'Didact Gothic'>
+    <div class="container">
+        <div class="row">
+            <h2 class="col-md-12 text-center" font-family: 'Didact Gothic'>
+                Favoring One Among Equals - Not a Good Idea: Many-to-one Matching for Robust Transformer based Pedestrian Detection
+                </br>
+                <small>
+                    WACV 2024
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://www.linkedin.com/in/k-n-ajay-shastry-b48982158/">
+						K.N Ajay Shastry
+                    </a>
+                      </br>IIT Delhi
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/ravi-sri-teja-kuriseti-83b9681b0/">
+                        K. Ravi Sri Teja
+                        </a>
+                        </br>IIT Delhi
+                    <li>
+			 <a href="https://faculty.iitmandi.ac.in/~aditya/">
+                        Aditya Nigam
+			 </a>
+                      </br>IIT Mandi
+                    </li>
+                    <li>
+                        <a href="https://www.cse.iitd.ac.in/~chetan">
+							Chetan Arora
+                        </a>
+                        </br>IIT Delhi
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" align="middle">
+            <div class="btn-group" role="group" aria-label="Top menu" align="middle">
+                <a class="btn btn-primary" href="">Paper</a>
+                <a class="btn btn-primary" href="https://github.com/ajayshastry08/Flow-Based-Matcher">Code</a>
+            </div>
+        </div>
+        
+        <br><br>
+
+        <div class="row" id="header_img" align="middle">
+            <image src="flow_matcher_images/main_diagram.png" class="img-responsive" alt="overview" width="700px">
+        </div>
+		
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h4>
+                    Abstract
+                </h4>
+                <p class="text-justify" font-family: 'Didact Gothic'>
+                    We investigate the reasons for lower performance of transformer based pedestrian detection models compared to convolutional neural network (CNN) based ones. CNN models generate dense pedestrian proposals, refine each proposal individually, and follow it up with non-maximal-suppression (NMS) to generate sparse predictions. In contrast, transformer models select one proposal per ground-truth (GT) pedestrian box and backpropagate positive gradient from them. All other proposals, many of them highly similar to the selected ones, are passed negative gradient. Though this leads to sparse predictions, obviating the need of NMS, the arbitrary selection of one among many similar proposals, hinders effective training, and lower accuracy of pedestrian detection. To mitigate the problem, instead of commonly used Kuhn-Munkres matching algorithm, we propose Min-cost-flow based formulation, and incorporate constraints such as, each ground truth box is matched to atleast one proposal, and many equally good proposals can be matched to a single ground truth box. We propose first transformer based pedestrian detection model incorporating our matching algorithm. Extensive experiments reveal that our approach achieves a miss rate (lower is better) of $3.7$ / $17.4$ / $21.8$ / $8.3$ / $2.0$ on Eurocity / TJU-traffic / TJU-campus / Cityperson / Caltech datasets compared to $4.7$ / $18.7$ / $24.8$ / $8.5$ / $3.1$ by the current SOTA.
+                </p>
+            </div>
+        </div>
+		
+		 <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h4>
+                    Performance Comparision
+                </h4>
+                
+                <div class="row" id="result_img" align="middle">
+                    <image src="flow_matcher_images/visual_comparision.jpg" class="img-responsive" alt="results" width="600px">
+                </div>
+		
+            </div>
+        </div>
+	   
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p class="text-justify" font-family: 'Didact Gothic'>
+                <center style="font-size:10px"><b>Credits:</b> Template of this webpage from <a href="http://www.mgharbi.com/">
+                    here.
+                </a></center>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
